@@ -1,0 +1,116 @@
+
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <style>
+
+            *{
+                padding: 0;
+                margin:0;
+                overflow: hidden;
+				cursor: none;
+                font-family: 'Press Start 2P', cursive;
+                width: 100%;
+            }
+            a{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top:0px;
+                right: 0px;
+            }
+
+            .logo{
+                text-align: center;
+                width: 100%;
+                height: 100vh;
+                margin: 0 auto;
+                position: absolute;
+                top:0px;
+                left: 0px;
+                background: rgba(35,31,32,1);
+                opacity: 1;
+                transition: opacity 1s;
+
+
+            }
+            img{
+                width: 40vh;
+                margin-top:15%;
+
+            }
+            p{
+                margin-top: 30px;
+                color: white;
+                font-size: 1rem;
+                color: #eaea4b;
+            }
+            video{
+                width: 60%;
+                height: 70%;
+                position: absolute;
+                top:15%;
+                left:15%;
+            }
+            .win{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100vh;
+                /* display: none; */
+                text-align: center;
+            }
+
+            .win img{
+              /* width: 100px;
+              height: 100px; */
+              position: absolute;
+              top: 20%;
+              display: none;
+              left: 50%;
+              transform: translate(-50%, -50%) }
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div class="logo">
+            <img src="img/logo_carga.svg">
+            <p></p>
+        </div>
+        <div class="win">
+            <img class="clap" id="imgA" src="img/gif/1.gif" alt="gif">
+            <img class="clap" id="imgB" src="img/gif/2.gif" alt="gif">
+            <img class="clap" id="imgC" src="img/gif/3.gif" alt="gif">
+            <img class="clap" id="imgD" src="img/gif/4.gif" alt="gif">
+            <img class="clap" id="imgE" src="img/gif/5.gif" alt="gif">
+
+
+
+        </div>
+        <script>
+            let time = 0;
+            let inter = setInterval(()=>{time++; document.querySelector('p').innerHTML = time+'%'; if(time > 99){ clearInterval(inter); showgame();}},27);
+            function showgame(){
+                setTimeout(()=>{document.querySelector('p').style.display = 'none';},0);
+                setTimeout(()=>{document.querySelector('p').style.color = 'red';},0);
+
+                setTimeout(()=>{document.querySelector('p').style.display = 'block';},200);
+                setTimeout(()=>{document.querySelector('p').style.display = 'none';},400);
+                setTimeout(()=>{document.querySelector('p').style.display = 'none';},600);
+                setTimeout(()=>{document.querySelector('p').style.display = 'block';},800);
+
+                setTimeout(()=>{document.querySelector('div').style.display = 'none';},1000);
+            }
+        </script>
+        <script src="js/p5.js"></script>
+        <script src="js/p5.collide2d.js"></script>
+        <script src="js/main.js"></script>
+        <!-- <a href="https://www.instagram.com/b.r.u.n.o.p.a.r.d.o/" target="_blank">&nbsp;</a> -->
+    </body>
+
+
+</html>
